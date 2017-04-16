@@ -8,6 +8,7 @@ import {TodoListComponent} from './todo-list/todo-list.component';
 import {TodoDashboardComponent} from './todo-dashboard/todo-dashboard.component';
 import {StoreModule} from '@ngrx/store';
 import {todoReducer} from './stores/todo/todo.reducer';
+import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {todoReducer} from './stores/todo/todo.reducer';
     BrowserModule,
     FormsModule,
     HttpModule,
-    StoreModule.provideStore(todoReducer)
+    StoreModule.provideStore(todoReducer),
+    StoreDevtoolsModule.instrumentOnlyWithExtension(),
   ],
   providers: [],
   bootstrap: [AppComponent]
